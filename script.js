@@ -143,7 +143,7 @@ function showReceipt(tx) {
     content.innerHTML = `
         <div id="capture-area" class="opay-style-receipt">
             <div class="receipt-top">
-                <div class="opay-logo-circle">OP</div>
+                <div class="opay-logo-circle">GP</div>
                 <h3 class="status-text">Transaction Successful</h3>
                 <h1 class="amount-main">₦${tx.amount.toLocaleString(undefined, {minimumFractionDigits: 2})}</h1>
                 <p class="tx-date">${tx.date}</p>

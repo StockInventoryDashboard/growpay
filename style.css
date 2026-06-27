@@ -1,0 +1,348 @@
+/* --- GLOBAL STYLES --- */
+:root {
+    --primary: #00b970; /* OPay Green */
+    --primary-dark: #008f56;
+    --secondary: #1a1a1a;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --text-main: #333;
+    --text-muted: #777;
+    --danger: #ff4d4d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- AUTHENTICATION (Login/Register) --- */
+#auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-card h1 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.auth-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.acc-box {
+    background: #f0fdf4;
+    border: 2px dashed var(--primary);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.acc-box h2 {
+    letter-spacing: 2px;
+    color: var(--secondary);
+}
+
+/* --- INPUTS & BUTTONS --- */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.main-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* --- DASHBOARD NAVIGATION --- */
+nav {
+    background: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.logout-btn {
+    background: #fff0f0;
+    color: var(--danger);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* --- BALANCE SECTION --- */
+.balance-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .balance-container { grid-template-columns: 1fr; }
+}
+
+.bal-card {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bal-card.secondary {
+    background: var(--secondary);
+}
+
+.bal-card p {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.bal-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.bal-card i {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.admin-trigger {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* --- ACTION GRID --- */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.action-grid button {
+    background: var(--white);
+    padding: 15px 5px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--text-main);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.action-grid i {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+/* --- APP SECTIONS --- */
+.app-section {
+    background: var(--white);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.app-section h3 {
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+/* --- TABLES & LISTS --- */
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 12px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #fafafa;
+}
+
+.withdraw-btn {
+    background: var(--danger);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+
+/* --- MARKET DISPLAY --- */
+.market-card {
+    background: #121212;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.market-card h2 {
+    font-size: 32px;
+    color: #00ff88;
+}
+
+/* --- MODALS --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirm { background: var(--primary); color: white; flex: 1; padding: 12px; border-radius: 8px; }
+.cancel { background: #eee; color: #333; flex: 1; padding: 12px; border-radius: 8px; }
+
+* { box-sizing: border-box; font-family: 'Inter', sans-serif; font-weight: 700; }
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #f0f2f5; overflow-x: hidden; }
+
+.hidden { display: none !important; }
+
+/* Dashboard Constraints */
+#dashboard { max-width: 500px; margin: 0 auto; min-height: 100vh; background: #fff; position: relative; }
+
+/* Bold UI Elements */
+h1, h2, h3 { color: #111; }
+.bal-card { background: #00b970; color: #fff; padding: 25px; border-radius: 0 0 25px 25px; margin-bottom: 20px; }
+.bal-card h2 { color: #fff; font-size: 2.2rem; margin: 10px 0; }
+
+.action-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 0 15px; }
+.action-grid button { border: none; background: #f8f9fa; padding: 15px 5px; border-radius: 12px; font-size: 11px; cursor: pointer; }
+.action-grid i { display: block; font-size: 20px; color: #00b970; margin-bottom: 8px; }
+
+/* History & Tables */
+.history-card { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; transition: 0.2s; }
+.history-card:active { background: #f0f0f0; }
+.h-info { flex: 1; margin-left: 15px; }
+.h-info small { display: block; font-weight: 400; color: #666; }
+.h-amt.green { color: #00b970; }
+.h-amt.red { color: #ff3b30; }
+
+/* OPay Receipt Style */
+.opay-style-receipt { background: #fff; padding: 30px 20px; border-radius: 0; text-align: center; color: #333; }
+.opay-logo-circle { width: 50px; height: 50px; background: #00b970; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 20px; }
+.status-text { color: #00b970; margin-bottom: 5px; }
+.amount-main { font-size: 32px; margin: 5px 0; }
+.tx-date { font-size: 12px; color: #777; font-weight: 400; }
+.receipt-details { border-top: 1px solid #eee; margin-top: 20px; padding-top: 20px; }
+.r-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 14px; }
+.r-item span { font-weight: 400; color: #666; }
+.tx-no { font-size: 10px; }
+.receipt-footer { margin-top: 30px; border-top: 1px dashed #ccc; padding-top: 20px; font-size: 12px; color: #999; }
+
+/* Auth Cards */
+.auth-card { padding: 40px 20px; text-align: center; }
+input { width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #eee; border-radius: 12px; outline: none; font-size: 16px; }
+input:focus { border-color: #00b970; }
+.main-btn { background: #00b970; color: white; border: none; padding: 15px; width: 100%; border-radius: 12px; font-size: 16px; }
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    #dashboard { width: 100%; }
+}
